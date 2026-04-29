@@ -1,5 +1,5 @@
 requests
 pandas
 python-dotenv
-py-polymarket-library
-streamlit
+py-polymarket
+
