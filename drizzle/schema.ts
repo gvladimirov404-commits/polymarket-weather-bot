@@ -28,7 +28,7 @@ export const users = mysqlTable(
     
     // Wallet & Subscription
     walletAddress: varchar("walletAddress", { length: 255 }),
-    subscriptionTier: mysqlEnum("subscriptionTier", ["free", "pro", "premium"]).default("free").notNull(),
+    subscriptionTier: mysqlEnum("subscriptionTier", ["free", "premium"]).default("free").notNull(),
     subscriptionStatus: mysqlEnum("subscriptionStatus", ["active", "inactive", "suspended", "cancelled"]).default("inactive").notNull(),
     subscriptionExpiresAt: timestamp("subscriptionExpiresAt"),
     
@@ -44,6 +44,10 @@ export const users = mysqlTable(
     // Referral
     referralCode: varchar("referralCode", { length: 32 }).unique(),
     referredBy: int("referredBy"),
+    
+    // Freemium Features
+    citiesAllowed: int("citiesAllowed").default(1), // Free tier: 1 city, Premium: unlimited
+    advancedFeaturesEnabled: boolean("advancedFeaturesEnabled").default(false), // Free: false, Premium: true
     
     // Preferences
     language: varchar("language", { length: 10 }).default("en"),
@@ -71,8 +75,10 @@ export const subscriptionPayments = mysqlTable(
   {
     id: int("id").autoincrement().primaryKey(),
     userId: int("userId").notNull(),
-    tier: mysqlEnum("tier", ["pro", "premium"]).notNull(),
+    tier: mysqlEnum("tier", ["premium"]).default("premium").notNull(),
     amountUSDT: decimal("amountUSDT", { precision: 10, scale: 2 }).notNull(),
+    referralDiscount: decimal("referralDiscount", { precision: 10, scale: 2 }).default("0"),
+    referralCommission: decimal("referralCommission", { precision: 10, scale: 2 }).default("0"),
     txHash: varchar("txHash", { length: 255 }).notNull().unique(),
     chainId: int("chainId").default(137), // Polygon mainnet
     status: mysqlEnum("status", ["pending", "confirmed", "failed"]).default("pending").notNull(),
@@ -99,8 +105,8 @@ export const referralCommissions = mysqlTable(
     referrerId: int("referrerId").notNull(),
     referredUserId: int("referredUserId").notNull(),
     paymentId: int("paymentId"),
-    commissionUSDT: decimal("commissionUSDT", { precision: 10, scale: 2 }).notNull(),
-    commissionRate: decimal("commissionRate", { precision: 5, scale: 2 }).default("10.00"), // percentage
+    discountAmount: decimal("discountAmount", { precision: 10, scale: 2 }).notNull(), // 2 USDT (20% of 10 USDT)
+    commissionUSDT: decimal("commissionUSDT", { precision: 10, scale: 2 }).notNull(), // 2 USDT (100% of discount)
     status: mysqlEnum("status", ["pending", "credited", "paid"]).default("pending").notNull(),
     createdAt: timestamp("createdAt").defaultNow().notNull(),
     paidAt: timestamp("paidAt"),

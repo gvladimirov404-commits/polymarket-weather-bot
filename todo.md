@@ -82,3 +82,19 @@
 - [x] Create database migration system - Drizzle migrations configured
 - [x] Build health check endpoints - Health check system implemented
 - [x] Implement graceful shutdown procedures - Fail-safe mechanisms implemented
+
+## Phase 9: Freemium Model & Pricing Updates
+- [ ] Update database schema to support freemium tiers (free vs premium)
+- [ ] Implement free tier restrictions (1 city, basic features only)
+- [ ] Update pricing to $10 USDT/month for premium tier
+- [ ] Implement feature gating based on subscription status
+- [ ] Update referral system: 20% discount (2 USDT), 100% commission to referrer
+- [ ] Test freemium logic and tier transitions
+- [ ] Push changes to GitHub
+- [ ] Deploy to Railway
+
+## Pricing & Monetization Summary
+- **Free Tier:** 1 city, basic dashboard, no advanced features
+- **Premium Tier:** $10 USDT/month - all features, unlimited cities
+- **Referral System:** 20% discount (2 USDT) for referred users, 100% commission (2 USDT) to referrer
+- **Payment Method:** USDT on Polygon network
