@@ -1,16 +1,17 @@
+
 import express, { Express } from 'express';
 import { serveStatic } from './vite';
 
 export async function setupServer(app: Express) {
-  // Новият маршрут, който поиска
+  // Добавяме тестовия маршрут за Railway
   app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('✅ Railway deployment successful! Server is running.');
   });
 
   if (process.env.NODE_ENV === 'development') {
-    // Разработка
+    // В режим на разработка (development)
   } else {
-    // Production
+    // В режим на продукция (production)
     serveStatic(app);
   }
 }
