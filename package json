@@ -1,15 +1,20 @@
 {
-  "name": "polymarket-weather-bot",
-  "version": "3.0.0",
-  "type": "module",
+  "name": "hypermeteo-trading-bot",
+  "version": "1.0.0",
+  "description": "Automated trading bot for Polymarket using weather data",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase": "^10.0.0",
+    "axios": "^1.6.0",
     "express": "^4.18.2",
-    "axios": "^1.6.2",
-    "@polymarkets/clob-client-v2": "^1.0.4",
-    "viem": "^2.7.0",
-    "chart.js": "^4.4.0"
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
+
