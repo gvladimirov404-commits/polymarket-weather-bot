@@ -45,7 +45,7 @@ app.use(express.json());
 
 let isBotActive = true;
 let lastTradeTimestamp = 0;
-let currentBalance = 0.00;
+let currentBalance = 17.93;
 let currentBetSize = 1.00;
 
 let clobClient;
