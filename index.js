@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 const TG_TOKEN = process.env.TELEGRAM_TOKEN;
 const TG_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const AUTO_TRADE_INTERVAL = 60 * 1000;
-const COOLDOWN_TIME = 5 * 60 * 1000;
+const COOLDOWN_TIME =  60 * 1000;
 const MAX_BET_PERCENT = 0.25;
 const MIN_BET_AMOUNT = 0.5;
 
