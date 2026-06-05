@@ -1,7 +1,7 @@
 const { ethers } = require('ethers');
 
 // USDC на Polygon Mainnet
-const USDC_ADDRESS = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
+const USDC_ADDRESS =  '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'; 
 const RPC_URL = 'https://polygon.llamarpc.com';  // Надежден публичен RPC
 
 const USDC_ABI = [
