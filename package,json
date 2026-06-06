@@ -1,0 +1,13 @@
+{
+  "name": "hypermeteo-v4",
+  "version": "4.0.0",
+  "main": "index.js",
+  "scripts": { "start": "node index.js" },
+  "dependencies": {
+    "@polymarket/clob-client-v2": "^1.0.0",
+    "dotenv": "^16.4.0",
+    "ethers": "^5.7.2",
+    "express": "^4.19.0",
+    "viem": "^2.9.0"
+  }
+}
