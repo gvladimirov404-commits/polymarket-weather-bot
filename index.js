@@ -1,5 +1,4 @@
-cd /root/polymarket-weather-bot
-cat > index.js << 'EOF'
+
 require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
@@ -203,4 +202,4 @@ async function start() {
 }
 
 start().catch(console.error);
-EOF
+
