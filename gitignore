@@ -1,0 +1,8 @@
+node_modules/
+.env
+settings.json
+trades_history.json
+balance_history.json
+*.log
+pm2-*.json
+.DS_Store
