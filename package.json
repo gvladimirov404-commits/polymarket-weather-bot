@@ -1,0 +1,20 @@
+{
+  "name": "hypermeteo-v4",
+  "version": "4.0.0",
+  "description": "Polymarket trading bot with CLOB v2, Kelly Criterion, daily loss limit and balance chart",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "pm2": "pm2 start index.js --name hypermeteo"
+  },
+  "dependencies": {
+    "@polymarket/clob-client-v2": "^1.0.0",
+    "dotenv": "^16.4.0",
+    "ethers": "^6.13.0",
+    "express": "^4.19.0",
+    "viem": "^2.9.0"
+  },
+  "keywords": ["polymarket", "trading-bot", "clob", "prediction-market"],
+  "author": "HyperMeteo",
+  "license": "MIT"
+}
